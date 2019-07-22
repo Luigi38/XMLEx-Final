@@ -1,0 +1,13 @@
+C:\Users\gobac\Documents\Visual Studio 2019\Projects\UniConverter Project\XMLEx Final\bin\Debug\XMLEx Final.exe.config
+C:\Users\gobac\Documents\Visual Studio 2019\Projects\UniConverter Project\XMLEx Final\bin\Debug\XMLEx Final.exe
+C:\Users\gobac\Documents\Visual Studio 2019\Projects\UniConverter Project\XMLEx Final\bin\Debug\XMLEx Final.pdb
+C:\Users\gobac\Documents\Visual Studio 2019\Projects\UniConverter Project\XMLEx Final\bin\Debug\XMLEx Final.xml
+C:\Users\gobac\Documents\Visual Studio 2019\Projects\UniConverter Project\XMLEx Final\obj\Debug\XMLEx Final.vbprojAssemblyReference.cache
+C:\Users\gobac\Documents\Visual Studio 2019\Projects\UniConverter Project\XMLEx Final\obj\Debug\XMLEx_Final.MainProject.resources
+C:\Users\gobac\Documents\Visual Studio 2019\Projects\UniConverter Project\XMLEx Final\obj\Debug\XMLEx_Final.Resources.resources
+C:\Users\gobac\Documents\Visual Studio 2019\Projects\UniConverter Project\XMLEx Final\obj\Debug\XMLEx Final.vbproj.GenerateResource.cache
+C:\Users\gobac\Documents\Visual Studio 2019\Projects\UniConverter Project\XMLEx Final\obj\Debug\XMLEx Final.vbproj.CoreCompileInputs.cache
+C:\Users\gobac\Documents\Visual Studio 2019\Projects\UniConverter Project\XMLEx Final\obj\Debug\XMLEx Final.exe
+C:\Users\gobac\Documents\Visual Studio 2019\Projects\UniConverter Project\XMLEx Final\obj\Debug\XMLEx Final.xml
+C:\Users\gobac\Documents\Visual Studio 2019\Projects\UniConverter Project\XMLEx Final\obj\Debug\XMLEx Final.pdb
+C:\Users\gobac\Documents\Visual Studio 2019\Projects\UniConverter Project\XMLEx Final\obj\Debug\XMLEx_Final.Loading.resources
