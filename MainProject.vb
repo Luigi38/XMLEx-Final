@@ -168,7 +168,7 @@ Public Class MainProject
                     End If
 
                     For Each x As XmlNode In NewElementList
-                        str = str & vbNewLine & x.InnerXml
+                        str = str & vbNewLine & x.OuterXml
                         curri += 1
                         Loading.DLb.Text = String.Format("Extracting XML Nodes... ({0}/{1})", curri, Loading.DPr.Maximum)
                         Loading.DLb.Left = Loading.DLb.Left - 50
@@ -205,13 +205,8 @@ Public Class MainProject
                         Loading.DPr.Refresh()
                     Next
 
-                    Dim d As Boolean = False
-                    Dim q As Integer = 0
-                    While d = True
-                        q += 1
-                        d = Not File.Exists(String.Format("{0}\{1}_{2}.xml", Application.StartupPath, truly_sFileName, q))
-                    End While
-                    File.WriteAllText(String.Format("{0}\{1}_{2}.xml", Application.StartupPath, truly_sFileName, q + 1), str, Encoding.UTF8)
+                    If Not String.IsNullOrWhiteSpace(str) Then str = str.Remove(0, 2)
+                    File.WriteAllText(String.Format("{0}\{1}_extracted.xml", Application.StartupPath, truly_sFileName), str, Encoding.UTF8)
 
                 Next
             End If
@@ -227,7 +222,7 @@ Public Class MainProject
                     q += 1
                     d = Not File.Exists(String.Format("{0}\{1}_{2}.xml", Application.StartupPath, truly_sFileName, q))
                 End While
-                File.WriteAllText(String.Format("{0}\{1}_{2}.xml", Application.StartupPath, truly_sFileName, q + 1), str, Encoding.UTF8)
+                File.WriteAllText(String.Format("{0}\{1}_{2}.xml", Application.StartupPath, truly_sFileName, q + 1), str.Remove(0, 2), Encoding.UTF8)
             End If
 
             Loading.Dispose()

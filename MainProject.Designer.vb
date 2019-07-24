@@ -31,8 +31,8 @@ Partial Class MainProject
         Me.ofd = New System.Windows.Forms.OpenFileDialog()
         Me.BGW_ExML = New System.ComponentModel.BackgroundWorker()
         Me.ioGroupBox = New System.Windows.Forms.GroupBox()
-        Me.inRadioButton = New System.Windows.Forms.RadioButton()
         Me.outRadioButton = New System.Windows.Forms.RadioButton()
+        Me.inRadioButton = New System.Windows.Forms.RadioButton()
         Me.ioGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -105,17 +105,6 @@ Partial Class MainProject
         Me.ioGroupBox.TabStop = False
         Me.ioGroupBox.Text = "In / Out"
         '
-        'inRadioButton
-        '
-        Me.inRadioButton.AutoSize = True
-        Me.inRadioButton.Location = New System.Drawing.Point(6, 20)
-        Me.inRadioButton.Name = "inRadioButton"
-        Me.inRadioButton.Size = New System.Drawing.Size(125, 16)
-        Me.inRadioButton.TabIndex = 0
-        Me.inRadioButton.TabStop = True
-        Me.inRadioButton.Text = "Extract 'In Nodes'"
-        Me.inRadioButton.UseVisualStyleBackColor = True
-        '
         'outRadioButton
         '
         Me.outRadioButton.AutoSize = True
@@ -126,6 +115,17 @@ Partial Class MainProject
         Me.outRadioButton.TabStop = True
         Me.outRadioButton.Text = "Extract 'Out Nodes'"
         Me.outRadioButton.UseVisualStyleBackColor = True
+        '
+        'inRadioButton
+        '
+        Me.inRadioButton.AutoSize = True
+        Me.inRadioButton.Location = New System.Drawing.Point(6, 20)
+        Me.inRadioButton.Name = "inRadioButton"
+        Me.inRadioButton.Size = New System.Drawing.Size(125, 16)
+        Me.inRadioButton.TabIndex = 0
+        Me.inRadioButton.TabStop = True
+        Me.inRadioButton.Text = "Extract 'In Nodes'"
+        Me.inRadioButton.UseVisualStyleBackColor = True
         '
         'MainProject
         '
