@@ -152,23 +152,29 @@ Public Class MainProject
                 For i As Integer = 0 To s.Count - 1
                     Dim curri As Integer
 
-                    If i > 0 Then
-                        Dim p As String = My.Computer.FileSystem.SpecialDirectories.Temp & "\tmp_xmlin.xml"
-                        File.WriteAllText(p, str)
-                        doc.Load(p)
-                        str = String.Empty
-                    End If
-
-                    NewElementList = doc.GetElementsByTagName(s(i))
+                    NewElementList = doc.GetElementsByTagName(s(0))
                     If i = 0 Then
-                        Loading.DPr.Maximum = s.Count * NewElementList.Count
-                        Loading.DPr.Refresh()
-                        Loading.DLb.Text = "Extracting XML Nodes..."
-                        Loading.DLb.Refresh()
-                    End If
+                                Loading.DPr.Maximum = s.Count * NewElementList.Count
+                                Loading.DPr.Refresh()
+                                Loading.DLb.Text = "Extracting XML Nodes..."
+                                Loading.DLb.Refresh()
+                            End If
 
                     For Each x As XmlNode In NewElementList
-                        str = str & vbNewLine & x.OuterXml
+                        Select Case s.Count
+                            Case 1
+                                str = str & vbNewLine & x.OuterXml
+                            Case 2
+                                str = str & vbNewLine & x.Item(s(1)).OuterXml
+                            Case 3
+                                str = str & vbNewLine & x.Item(s(1)).Item(s(2)).OuterXml
+                            Case 4
+                                str = str & vbNewLine & x.Item(s(1)).Item(s(2)).Item(s(3)).OuterXml
+                            Case 5
+                                str = str & vbNewLine & x.Item(s(1)).Item(s(2)).Item(s(3)).Item(s(4)).OuterXml
+                            Case > 5
+                                Throw New OverflowException(String.Format("'{0} Nodes > 5 Nodes'. We are developing it...", s.Count))
+                        End Select
                         curri += 1
                         Loading.DLb.Text = String.Format("Extracting XML Nodes... ({0}/{1})", curri, Loading.DPr.Maximum)
                         Loading.DLb.Left = Loading.DLb.Left - 50
@@ -206,7 +212,7 @@ Public Class MainProject
                     Next
 
                     If Not String.IsNullOrWhiteSpace(str) Then str = str.Remove(0, 2)
-                    File.WriteAllText(String.Format("{0}\{1}_extracted.xml", Application.StartupPath, truly_sFileName), str, Encoding.UTF8)
+                    File.WriteAllText(String.Format("{0}\{1}_{2}.xml", Application.StartupPath, truly_sFileName, i + 1), str, Encoding.UTF8)
 
                 Next
             End If
@@ -216,13 +222,7 @@ Public Class MainProject
             End If
 
             If ioNodes Then 'InNodes 전용 File Write.
-                Dim d As Boolean = False
-                Dim q As Integer = 0
-                While d = True
-                    q += 1
-                    d = Not File.Exists(String.Format("{0}\{1}_{2}.xml", Application.StartupPath, truly_sFileName, q))
-                End While
-                File.WriteAllText(String.Format("{0}\{1}_{2}.xml", Application.StartupPath, truly_sFileName, q + 1), str.Remove(0, 2), Encoding.UTF8)
+                File.WriteAllText(String.Format("{0}\{1}_extracted.xml", Application.StartupPath, truly_sFileName), str.Remove(0, 2), Encoding.UTF8)
             End If
 
             Loading.Dispose()

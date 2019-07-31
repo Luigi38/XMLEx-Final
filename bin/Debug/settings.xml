@@ -2,5 +2,5 @@
 <XMLEx-Settings>
   <xml_info>C:\Users\gobac\Documents\Visual Studio 2019\Projects\UniConverter Project\UniConverter Project\bin\Debug\Workspace\ableproj\abl_proj.xml</xml_info>
   <Launguage>English</Launguage>
-  <NodesIO>OutNodes</NodesIO>
+  <NodesIO>InNodes</NodesIO>
 </XMLEx-Settings>
